@@ -1,7 +1,7 @@
 stages:
 0. mkdir DatingApp, then cd
 - create model, controller, Data, based on that we can create db scheleton
-1. dotnet ef migrations add initialCreate -> create migration folder
+1. dotnet ef migrations add <nazwa>initialCreate -> create migration folder and files named initialCreate
 2. dotnet ef database update -> run script and create db
 3. dotnet restore and run
 4. dodwanie dodatkowego modulu: dotnet add package Microsoft.AspNetCore.NodeServices: https://dotnetthoughts.net/using-node-services-in-aspnet-core/

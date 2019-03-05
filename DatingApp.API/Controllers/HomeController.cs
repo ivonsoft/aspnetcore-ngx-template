@@ -3,16 +3,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.NodeServices;
 using System.Runtime.InteropServices;
+using Microsoft.Extensions.Logging;
 
 namespace DatingApp.API.Controllers {
 
    
     [Route("api/[controller]")]
     [ApiController]
-    public class HomeController: ControllerBase {
+    // contollerBase implemetuje bez View[], controller z View[]
+    public class HomeController: ControllerBase  {
          // Insert correct filePath
-        [DllImport(@"E:\Projekty c#\WindowsNativeCpp\x64\Release\WindowsNativeCpp.dll", EntryPoint = 
-       "math_add", CallingConvention = CallingConvention.StdCall)]
+    //     [DllImport(@"E:\Projekty c#\WindowsNativeCpp\x64\Release\WindowsNativeCpp.dll", EntryPoint = 
+    //    "math_add", CallingConvention = CallingConvention.StdCall)]
+        [DllImport(@"NodeModule\WindowsNativeCpp.dll", EntryPoint = 
+        "math_add", CallingConvention = CallingConvention.StdCall)]
         public static extern int Add(int a, int b);
         // GET api/Home
         [HttpGet("Adds")]
